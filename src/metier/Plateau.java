@@ -1,4 +1,4 @@
-package code.metier;
+package src.metier;
 
 public class Plateau
 {
@@ -7,7 +7,7 @@ public class Plateau
 	/*   Donnee    */
 	/*-------------*/
 
-	private int[int[][]][int[][]] plateau;
+	private int[][] plateau;
 
 
 
@@ -24,9 +24,13 @@ public class Plateau
 
 
 
-	public int[int[][]][int[][]] initPlateau()
+	public int[][] initPlateau()
 	{
-		int[int[][]][int[][]] plateau = new int[int[3][3]][int[3][3]]
+		int[][] plateau = new int[9][9];
+
+
+
+		return plateau;
 	}
 
 }
