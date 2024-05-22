@@ -75,33 +75,4 @@ public class GenererSudoku
 
 		return false;
 	}
-
-
-
-	public String toString()
-	{
-		StringBuilder sb = new StringBuilder();
-		for (int cptLig = 0; cptLig < this.sudoku.length; cptLig++){
-
-
-			for (int cptCol = 0; cptCol< this.sudoku[cptLig].length; cptCol++)
-			{
-				sb.append((this.sudoku[cptLig][cptCol]));
-				if ((cptCol +1 ) % 3 == 0 && cptCol < this.sudoku[cptLig].length - 1 )
-				{
-					sb.append(" | ");
-				} else {
-					if (cptCol < this.sudoku[cptLig].length - 1)
-						sb.append(" ");
-				}
-			}
-			sb.append("\n");
-			if ((cptLig + 1 ) % 3 == 0 && cptLig < this.sudoku.length -1 )
-				sb.append("------+-------+------\n");
-		}
-		return sb.toString();
-	}
-
-
-
 }
