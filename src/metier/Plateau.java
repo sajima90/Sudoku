@@ -142,9 +142,11 @@ public class Plateau
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
+		sb.append("    1 2 3 | 4 5 6 | 7 8 9\n"); // column numbers
+		sb.append("  ╔═══════════════════════╗\n");
 		for (int cptLig = 0; cptLig < plateau.length; cptLig++){
-
-
+			sb.append(cptLig + 1); // row number
+			sb.append(" ║ ");
 			for (int cptCol = 0; cptCol< plateau[cptLig].length; cptCol++)
 			{
 				sb.append((plateau[cptLig][cptCol]));
@@ -154,12 +156,15 @@ public class Plateau
 				} else {
 					if (cptCol < plateau[cptLig].length - 1)
 						sb.append(" ");
-					}
+				}
 			}
+			sb.append(" ║ ");
+
 			sb.append("\n");
 			if ((cptLig + 1 ) % 3 == 0 && cptLig < plateau.length -1 )
-				sb.append("------+-------+------\n");
+				sb.append("  ╠ ───── + ───── + ───── ╣\n");
 		}
+		sb.append("  ╚═══════╩═══════╩═══════╝\n");
 		return sb.toString();
 	}
 

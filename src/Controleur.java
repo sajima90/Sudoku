@@ -11,9 +11,9 @@ public class Controleur
 		System.out.println("---------------------------- Résolution --------------------------------");
 
 		System.out.println(plateau.toString());
-//		plateau.setValeur(0,5, 8);
-//		plateau.setValeur(0,4, 8);
-		System.out.println(plateau.toString());
+//		plateau.setValeur(0, 5, 8);
+//		plateau.setValeur(0, 4, 8);
+//		System.out.println(plateau.toString());
 		System.out.println(plateau.solution(plateau.getPlateau()));
 		System.out.println("Sudoku Fini ! \n" + plateau.toString());
 
