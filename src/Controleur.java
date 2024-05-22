@@ -19,13 +19,16 @@ public class Controleur
 		System.out.println("Sudoku Fini ! \n" + plateau.toString());
 
 
-		System.out.println("---------------------------- Generation --------------------------------");
+//		System.out.println("---------------------------- Generation --------------------------------");
 
 
-		GenererSudoku sudoku = new GenererSudoku();
-		System.out.println("Sudoku généré : \n" + sudoku.toString());
-		System.out.println(sudoku.solution(sudoku.getPlateau()));
-		System.out.println("Sudoku Fini ! \n" + sudoku.toString());
+//		GenererSudoku sudoku = new GenererSudoku();
+//
+//		System.out.println("Sudoku généré : \n" + sudoku.toString());
+//		System.out.println(sudoku.solution(sudoku.getPlateau()));
+//		System.out.println("Sudoku Fini ! \n" + sudoku.toString());
+//
+//		System.out.println("Sudoku généré : \n" + sudoku);
 	}
 
 	public static void main(String[] args)

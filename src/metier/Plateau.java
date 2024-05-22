@@ -7,35 +7,18 @@ import java.util.spi.AbstractResourceBundleProvider;
 
 public class Plateau
 {
-
-	/*-------------*/
-	/*   Donnee    */
-	/*-------------*/
-
 	private int[][] plateau;
 	private boolean[][] valeursBase;
 
-
-
-
-	/*-------------*/
-	/* Instruction */
-	/*-------------*/
-
-
 	public Plateau()
 	{
-		this.plateau = initPlateau();
-	}
+		GenererSudoku sudoku = new GenererSudoku();
 
-
-
-	public int[][] initPlateau()
-	{
-		int[][] plateau = new int[9][9];
+		this.plateau = sudoku.genererAleatoirementSudoku();
 		this.valeursBase = new boolean[9][9];
 
-		try {
+		/* Lecture fichier
+			try {
 			Scanner sc = new Scanner(new File("src/niveaux/n_1.txt"));
 			int cptLig = 0, cptCol = 0;
 			while(sc.hasNext()){
@@ -58,8 +41,8 @@ public class Plateau
 			System.out.println("Fichier non trouvé");
 		}
 
+		*/
 
-		return plateau;
 	}
 
 	public int getValeur(int lig, int col)
@@ -129,8 +112,6 @@ public class Plateau
 		return true;
 	}
 
-
-
 	public static boolean verif(int lig, int col, int val, int[][] sudoku)
 	{
 		// regarder les lignes et les colonnes
@@ -158,8 +139,6 @@ public class Plateau
 		return true;
 	}
 
-
-
 	public String toString()
 	{
 		StringBuilder sb = new StringBuilder();
@@ -186,6 +165,6 @@ public class Plateau
 
 	public int[][] getPlateau()
 	{
-		return plateau;
+		return this.plateau;
 	}
 }

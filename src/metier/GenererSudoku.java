@@ -2,22 +2,24 @@ package src.metier;
 
 import java.util.*;
 
-public class GenererSudoku extends Plateau
+public class GenererSudoku
 {
+	private int[][] sudoku;
 	private Random random;
 
 	public GenererSudoku()
 	{
+		this.sudoku = new int[9][9];
 		this.random = new Random();
 		this.genererAleatoirementSudoku();
 	}
 
-	public void genererAleatoirementSudoku()
+	public int[][] genererAleatoirementSudoku()
 	{
 		// Remplir le sudoku avec des 0
 		for (int cpt = 0; cpt < 9; cpt ++)
 			for (int cpt2 = 0; cpt2 < 9; cpt2 ++)
-				this.setValeur(cpt, cpt2, 0);
+				this.sudoku[cpt][cpt2] = 0;
 
 		// Placement des chiffres
 		remplirSudoku(0, 0);
@@ -28,12 +30,16 @@ public class GenererSudoku extends Plateau
 		{
 			int lig = this.random.nextInt(9);
 			int col = this.random.nextInt(9);
-			if (this.getValeur(lig, col) != 0)
+			if (this.sudoku[lig][col] != 0)
 			{
-				this.setValeur(lig, col, 0);
+				this.sudoku[lig][col] = 0;
 				cpt++;
 			}
 		}
+
+		return this.sudoku;
+
+
 	}
 
 	private boolean remplirSudoku(int lig, int col)
@@ -44,7 +50,7 @@ public class GenererSudoku extends Plateau
 		if (col == 9)
 			return remplirSudoku(lig + 1, 0);
 
-		if (this.getValeur(lig, col) != 0)
+		if (this.sudoku[lig][col] != 0)
 			return remplirSudoku(lig, col + 1);
 
 		List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
@@ -53,20 +59,49 @@ public class GenererSudoku extends Plateau
 		for (int num : numbers)
 		{
 			// verif
-			if (verif(lig, col, num, this.getPlateau()))
+			if (Plateau.verif(lig, col, num, this.sudoku))
 			{
 				// Placer le chiffre
-				this.setValeur(lig, col, num);
+				this.sudoku[lig][col] = num;
 
 				// newt
 				if (remplirSudoku(lig, col + 1))
 					return true;
 
 				// Si != remplir, enlever le chiffre et next
-				this.setValeur(lig, col, 0);
+				this.sudoku[lig][col] = 0;
 			}
 		}
 
 		return false;
 	}
+
+
+
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		for (int cptLig = 0; cptLig < this.sudoku.length; cptLig++){
+
+
+			for (int cptCol = 0; cptCol< this.sudoku[cptLig].length; cptCol++)
+			{
+				sb.append((this.sudoku[cptLig][cptCol]));
+				if ((cptCol +1 ) % 3 == 0 && cptCol < this.sudoku[cptLig].length - 1 )
+				{
+					sb.append(" | ");
+				} else {
+					if (cptCol < this.sudoku[cptLig].length - 1)
+						sb.append(" ");
+				}
+			}
+			sb.append("\n");
+			if ((cptLig + 1 ) % 3 == 0 && cptLig < this.sudoku.length -1 )
+				sb.append("------+-------+------\n");
+		}
+		return sb.toString();
+	}
+
+
+
 }
