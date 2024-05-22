@@ -143,7 +143,7 @@ public class Plateau
 	{
 		StringBuilder sb = new StringBuilder();
 		sb.append("    1 2 3 | 4 5 6 | 7 8 9\n"); // column numbers
-		sb.append("  ╔═══════════════════════╗\n");
+		sb.append("  ╔═══════╬═══════╬═══════╗\n");
 		for (int cptLig = 0; cptLig < plateau.length; cptLig++){
 			sb.append(cptLig + 1); // row number
 			sb.append(" ║ ");
@@ -162,7 +162,7 @@ public class Plateau
 
 			sb.append("\n");
 			if ((cptLig + 1 ) % 3 == 0 && cptLig < plateau.length -1 )
-				sb.append("  ╠ ───── + ───── + ───── ╣\n");
+				sb.append("  ╠ ───── ╬ ───── ╬ ───── ╣\n");
 		}
 		sb.append("  ╚═══════╩═══════╩═══════╝\n");
 		return sb.toString();
