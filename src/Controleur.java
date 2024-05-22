@@ -1,13 +1,17 @@
 package src;
+import src.ihm.Frame;
 import src.metier.Plateau;
 
 public class Controleur
 {
 	private Plateau plateau;
+	private Frame   frame;
+
 
 	public Controleur()
 	{
 		this.plateau = new Plateau();
+		this.frame   = new Frame();
 		System.out.println("---------------------------- Résolution --------------------------------");
 
 		System.out.println(plateau.toString());
