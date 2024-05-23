@@ -93,7 +93,7 @@ public class PanelJeu extends JPanel  implements ActionListener
 						if (this.plateau[lig][col] != 0)
 						{
 							this.tabBoutonjeu[lig][col] = new JButton(
-									new ImageIcon("images/" + this.plateau[lig][col] + ".png"));
+									new ImageIcon("../images/" + this.plateau[lig][col] + ".png"));
 						}
 						else
 						{
@@ -113,7 +113,7 @@ public class PanelJeu extends JPanel  implements ActionListener
 
 		// Création des boutons de pioche
 		for (int cpt = 1; cpt <= this.tabPioche.length; cpt++){
-			this.tabPioche[cpt - 1] = new JButton(new ImageIcon("images/" + cpt + ".png"));
+			this.tabPioche[cpt - 1] = new JButton(new ImageIcon("../images/" + cpt + ".png"));
 			this.tabPioche[cpt - 1].setContentAreaFilled(false);
 //			this.tabPioche[cpt - 1].setBorderPainted(false);
 		}
@@ -200,7 +200,7 @@ public class PanelJeu extends JPanel  implements ActionListener
 			{
 				if (this.plateau[lig][col] != 0)
 				{
-					Icon img = new ImageIcon("images/" + this.plateau[lig][col] + ".png");
+					Icon img = new ImageIcon("../images/" + this.plateau[lig][col] + ".png");
 
 					this.tabBoutonjeu[lig][col].setIcon(img);
 				}

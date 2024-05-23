@@ -1,4 +1,10 @@
 ./src/Controleur.java
+
+./src/metier/GenererSudoku.java
 ./src/metier/Plateau.java
+./src/metier/Timer.java
 
-
+./src/ihm/FrameJeu.java
+./src/ihm/FrameVictoire.java
+./src/ihm/PanelJeu.java
+./src/ihm/PanelVictoire.java
