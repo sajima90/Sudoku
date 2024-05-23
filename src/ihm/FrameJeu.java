@@ -7,7 +7,10 @@ import java.awt.*;
 
 public class FrameJeu extends JFrame
 {
-	public Frame()
+
+	private PanelJeu panelJeu;
+
+	public FrameJeu( Controleur ctrl)
 	{
 
 		this.panelJeu = new PanelJeu( ctrl, this );
