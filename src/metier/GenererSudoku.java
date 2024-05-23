@@ -26,7 +26,7 @@ public class GenererSudoku
 
 		// Retirage + difficulté
 		int cpt = 0;
-		while (cpt < 1)
+		while (cpt < 20)
 		{
 			int lig = this.random.nextInt(9);
 			int col = this.random.nextInt(9);

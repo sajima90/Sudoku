@@ -1,22 +1,27 @@
 package src.ihm;
 
+import src.Controleur;
+
 import javax.swing.*;
 import java.awt.*;
 
-public class Frame extends JFrame
+public class FrameJeu extends JFrame
 {
 	public Frame()
 	{
 
+		this.panelJeu = new PanelJeu( ctrl, this );
+
+
 		this.setTitle("Sudoku");
-		this.setSize(500, 500);
+		this.setSize(1400, 1400);
 		
-		this.setLocation(400, 400);
+		this.setLocation(200, 400);
 
 		this.setLayout(new BorderLayout());
 
 		/* Ajouter notre panel à la Frame */
-		this.add( new Panel());
+		this.add(this.panelJeu);
 
 		this.setVisible(true);
 
@@ -26,9 +31,10 @@ public class Frame extends JFrame
 
 	}
 
-
-	public static void main(String[] args)
+	public void majIHM()
 	{
-		new Frame();
+		this.panelJeu.majIHM();
 	}
+
+
 }

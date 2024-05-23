@@ -1,12 +1,15 @@
 package src;
-import src.ihm.Frame;
+import src.ihm.FrameJeu;
+import src.ihm.FrameVictoire;
 import src.metier.Plateau;
 
 public class Controleur
 {
-	private Plateau plateau;
-	private Frame   frame;
+	private Plateau       plateau;
+	private FrameJeu      frameJeu;
+	private FrameVictoire frameVictoire;
 
+	Timer timer    = new Timer();
 
 	public Controleur()
 	{
