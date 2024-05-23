@@ -8,8 +8,9 @@ public class Frame extends JFrame
 	public Frame()
 	{
 
-		this.setTitle("Fenêtre de base");
-		this.setSize(500, 200);
+		this.setTitle("Sudoku");
+		this.setSize(500, 500);
+		
 		this.setLocation(400, 400);
 
 		this.setLayout(new BorderLayout());

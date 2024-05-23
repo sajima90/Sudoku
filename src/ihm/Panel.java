@@ -15,20 +15,20 @@ import java.awt.event.ItemListener;
 public class Panel extends JPanel implements ActionListener, ItemListener, AdjustmentListener
 {
 
-	private     JPanel          panelHaut;
-	private     JPanel          panelBas;
+	private JPanel panelHaut;
+	private JPanel panelBas;
 
-	private     JRadioButton    rbValUn;
-	private     JRadioButton    rbValDeux;
+	private JRadioButton rbValUn;
+	private JRadioButton rbValDeux;
 
-	private     JCheckBox       cbValUn;
-	private     JCheckBox       cbValDeux;
+	private JCheckBox cbValUn;
+	private JCheckBox cbValDeux;
 
-	private     JLabel          lblTexte;
+	private JLabel lblTexte;
 
-	private     JTextField      txtInput;
+	private JTextField txtInput;
 
-	private     JScrollBar      scBar;
+	private JScrollBar scBar;
 
 	public Panel()
 	{
@@ -38,17 +38,17 @@ public class Panel extends JPanel implements ActionListener, ItemListener, Adjus
 		this.setLayout(new BorderLayout());
 
 		/* ------------------------ */
-		/*  Création des composants */
+		/* Création des composants */
 		/* ------------------------ */
 
 		this.panelHaut = new JPanel(new GridLayout(3, 2));
-		this.panelBas  = new JPanel(new BorderLayout());
+		this.panelBas = new JPanel(new BorderLayout());
 
 		this.panelHaut.setBackground(new Color(254, 128, 47));
 		this.panelBas.setBackground(new Color(147, 214, 245));
 
 		btgRadio = new ButtonGroup();
-		this.rbValUn   = new JRadioButton("Valeur 1", true);
+		this.rbValUn = new JRadioButton("Valeur 1", true);
 		this.rbValUn.setOpaque(false);
 
 		this.rbValDeux = new JRadioButton("Valeur 2");
@@ -60,20 +60,20 @@ public class Panel extends JPanel implements ActionListener, ItemListener, Adjus
 		this.cbValDeux = new JCheckBox("Case 2");
 		this.cbValDeux.setOpaque(false);
 
-		this.lblTexte   = new JLabel("Saisie : ", JLabel.RIGHT);
+		this.lblTexte = new JLabel("Saisie : ", JLabel.RIGHT);
 		/* 15 correspond à la taille du TextField en caractère */
-		this.txtInput   = new JTextField(15);
+		this.txtInput = new JTextField(15);
 		this.txtInput.setBackground(Color.GRAY);
 		this.txtInput.setEnabled(false);
 
-		this.scBar      = new JScrollBar(JScrollBar.HORIZONTAL, 0, 20, 0, 500);
+		this.scBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 20, 0, 500);
 
 		/* Ajouter les boutons radio à notre groupe */
 		btgRadio.add(this.rbValUn);
 		btgRadio.add(this.rbValDeux);
 
 		/* ------------------------------ */
-		/*  Positionnement des composants */
+		/* Positionnement des composants */
 		/* ------------------------------ */
 
 		this.panelHaut.add(this.rbValUn);
@@ -88,20 +88,22 @@ public class Panel extends JPanel implements ActionListener, ItemListener, Adjus
 		this.panelBas.add(this.scBar);
 
 		this.add(this.panelHaut);
-		/*  Positionner dans un Border Layout = BorderLayout.NORTH (Haut) | SOUTH (Bas) | EAST (DROITE) | WEST (GAUCHE) | CENTER (Centre) */
+		/*
+		 * Positionner dans un Border Layout = BorderLayout.NORTH (Haut) | SOUTH
+		 * (Bas) | EAST (DROITE) | WEST (GAUCHE) | CENTER (Centre)
+		 */
 		this.add(this.panelBas, BorderLayout.SOUTH);
 
 		/* -------------------------- */
-		/*  Activation des composants */
+		/* Activation des composants */
 		/* -------------------------- */
 
-		this.rbValUn  .addItemListener(this);
+		this.rbValUn.addItemListener(this);
 		this.rbValDeux.addItemListener(this);
 
 		this.txtInput.addActionListener(this);
 
 		this.scBar.addAdjustmentListener(this);
-
 
 	}
 
@@ -135,7 +137,7 @@ public class Panel extends JPanel implements ActionListener, ItemListener, Adjus
 
 	}
 
-	public void adjustmentValueChanged (AdjustmentEvent e)
+	public void adjustmentValueChanged(AdjustmentEvent e)
 	{
 
 		if (e.getSource() == this.scBar)
