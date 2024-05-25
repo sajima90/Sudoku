@@ -96,7 +96,7 @@ public class Timer
 		if (horloge != null) {
 			horloge.shutdown();
 		}
-		System.out.println(); // Move to the next line after stopping
+		System.out.println();
 	}
 
 }

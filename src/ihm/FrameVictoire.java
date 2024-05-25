@@ -16,7 +16,7 @@ public class FrameVictoire extends JFrame
 
 
 		this.setTitle("Sudoku");
-		this.setSize(1400, 1400);
+		this.setSize(1173 , 1170);
 
 		this.setLocation(200, 400);
 

@@ -63,10 +63,6 @@ public class Controleur
 	{
 		return this.plateau.getScore();
 	}
-
-
-
-
 	public static void main(String[] args)
 	{
 		new Controleur();
